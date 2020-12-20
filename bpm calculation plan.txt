@@ -1,0 +1,21 @@
+[Each Line is a seperate step unless indented]
+---------------------------------------------------
+
+Import .midi file
+Input from user the offset of the first timing point
+Create a list with all the timestamps of notes
+    if notes are within 25ms from the first note of the pair, combine as 1 timestamp on the first note
+For each two timestamps, execute the timingPoint.py
+    input tuple with the two ms values of where the two timestamps are at
+    find difference between the two values
+    using range of possible differences, go in this order:
+    1/2, 1/4, 1/3, 1/6
+    ex: between 50ms-100ms=1/4
+    Return a bpm (and/or a boolean stating whether it was a bpm for only the first two or all three points)
+
+BASICALLY THE SAME THING BUT INSTEAD DO A TUPLE OF 3
+WE CAN TEST BOTH OPTIONS AND SEE WHICH ONE WORKS BETTER
+
+Loop using timingPoint.py and +=1 the i value that limits number of times to loop and also used for indexing.
+Every time the timing point is returned, add it to a list
+Once the list is completed, export the timing points in .osu format (in a .txt file)
